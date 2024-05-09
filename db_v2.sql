@@ -37,6 +37,8 @@ call sp_add_produto(2,3,'Carro de brinquedo', 'Amox', 1,1,1,'Brinquedo', 10,20,3
 
 call sp_deletar_produto(2);
 
+//Adicionar Produto
+
 CREATE PROCEDURE `sp_add_produto`(
 in vid int,
  vcodigo int, 
@@ -56,6 +58,8 @@ insert into produto (id,codigo,nome,fabricante,estoque,estoque_minimo,estoque_ma
 values(vid,vcodigo,vnome,vfabricante,vestoque,vestoque_minimo,vestoque_maximo,vcategoria,vpeso,vpreco_compra,vpreco_venda,vunidade_medida,vdescricao);
 END
 
+//Adicionar venda
+ 
 CREATE PROCEDURE `sp_add_venda`(
 in vid int,
  vproduto varchar(255),
@@ -73,8 +77,45 @@ delete from produto
 where id = vid;
 END
 
+//Deletar venda
+ 
 CREATE PROCEDURE `sp_deletar_venda`(vid int)
 BEGIN
 delete from venda
 where id = vid;
+END
+
+//Atualizar produto
+ 
+CREATE PROCEDURE `sp_atualizar_produto`(
+in id int,
+ codigo int, 
+ nome varchar(255), 
+ fabricante varchar(255),
+ estoque int, 
+ estoque_minimo int,
+ estoque_maximo int, 
+ categoria varchar(100),
+ peso float, 
+ preco_compra decimal(10,2), 
+ preco_venda decimal(10,2),
+ unidade_medida varchar(50), 
+ descricao text
+)
+BEGIN
+update produto as p set p.id = id, p.codigo = codigo, p.nome = nome, p.fabricante = fabricante, p.estoque = estoque, p.estoque_minimo = estoque_minimo, p.estoque_maximo = estoque_maximo,
+p.categoria = categoria, p.peso = peso, p.preco_compra = preco_compra, p.preco_venda = preco_venda, p.unidade_medida = unidade_medida, p.descricao = descricao
+where p.id = id;
+END
+
+//Atualizar venda
+CREATE PROCEDURE `sp_atualizar_venda`(
+in id int,
+ produto varchar(255),
+ quantidade int,
+ valor_pago decimal(10,2),
+ pagamento varchar(255))
+BEGIN
+update venda as v set v.id = id, v.produto = produto, v.quantidade = quantidade, v.valor_pago = valor_pago, v.pagamento = pagamento
+where v.id = id;
 END
