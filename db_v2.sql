@@ -40,7 +40,6 @@ call sp_deletar_produto(2);
 //Adicionar Produto
 
 CREATE PROCEDURE `sp_add_produto`(
-in vid int,
  vcodigo int, 
  vnome varchar(255), 
  vfabricante varchar(255),
@@ -61,14 +60,13 @@ END
 //Adicionar venda
  
 CREATE PROCEDURE `sp_add_venda`(
-in vid int,
  vproduto varchar(255),
  vquantidade int,
  vvalor_pago decimal(10,2),
  vpagamento varchar(255))
 BEGIN
-insert into venda (id, produto, quantidade, valor_pago, pagamento)
-values(vid,vproduto,vquantidade,vvalor_pago,vpagamento);
+insert into venda (produto, quantidade, valor_pago, pagamento)
+values(vproduto,vquantidade,vvalor_pago,vpagamento);
 END
 
 CREATE  PROCEDURE `sp_deletar_produto`(vid int)
