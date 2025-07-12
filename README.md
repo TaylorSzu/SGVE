@@ -1,25 +1,50 @@
-Sistema de Gestão de Vendas e Estoque (SGVE)
+# 🛒 Sistema de Gestão de Vendas e Estoque (SGVE)
 
-Introdução
-O Sistema de Gestão de Vendas e Estoque (SGVE) é uma aplicação destinada a facilitar a administração de vendas e controle de estoque de produtos. Ele permite o gerenciamento de produtos, categorias, usuários e vendas, além de fornecer logs detalhados para auditoria.
+## 📌 Descrição
 
-Funcionalidades
-Gestão de Produtos: Cadastro, edição, exclusão e visualização de produtos.
-Gestão de Categorias: Cadastro, edição, exclusão e visualização de categorias de produtos.
-Gestão de Usuários: Cadastro, edição, exclusão e visualização de usuários.
-Gestão de Vendas: Registro, visualização e gerenciamento de vendas.
-Logs de Atividades: Registro de atividades para auditoria, incluindo ações sobre produtos, vendas, usuários e categorias.
-Tecnologias Utilizadas
-Java: Linguagem de programação utilizada no backend.
-MySQL: Sistema de gerenciamento de banco de dados relacional.
-Swing: Biblioteca gráfica para construção da interface com o usuário.
-Maven: Gerenciador de dependências e automação de build.
-NetBeans: IDE utilizada para desenvolvimento do projeto.
-Instalação
-Pré-requisitos
-Java Development Kit (JDK) 21
-Apache Maven
-MySQL Server
-NetBeans (opcional, mas recomendado)
+O SGVE (Sistema de Gestão de Vendas e Estoque) é uma aplicação desktop desenvolvida em Java, com interface gráfica construída utilizando Swing e persistência de dados via MySQL. Trata-se de um sistema voltado para o ambiente de vendas e administração de estoque, pensado especialmente para pequenos negócios ou estudos acadêmicos.
 
-Este projeto é proprietário e a cópia ou redistribuição do código-fonte não é permitida sem autorização explícita do autor. Todos os direitos reservados.
+---
+
+## 🎯 Contexto do Projeto
+
+Este projeto nasceu durante minha formação técnica em Desenvolvimento de Sistemas. A ideia surgiu como uma maneira prática de aplicar conceitos que eu vinha estudando, como programação orientada a objetos, manipulação de banco de dados e desenvolvimento de interfaces gráficas. Escolhi desenvolver um sistema de vendas e estoque porque é um cenário muito presente no dia a dia de empresas e comércios, o que me permitiu simular um uso real.
+
+O desenvolvimento do sistema envolveu a criação de telas para cadastro de produtos, categorias, usuários e vendas, tudo de forma conectada a um banco de dados MySQL. Também adicionei um recurso de registro de atividades (logs), onde todas as ações realizadas pelos usuários ficam armazenadas — algo que aprendi ser importante para auditoria e controle de mudanças.
+
+---
+
+## 📚 O que Aprendi
+
+Durante a construção do SGVE, aprendi muito mais do que apenas escrever código. A experiência me permitiu entender melhor a estrutura de um sistema completo, desde a modelagem do banco até o empacotamento do projeto com Maven. Também passei a ver com mais clareza a importância da separação de responsabilidades, organização em camadas (como o padrão MVC) e a necessidade de tratar erros de forma adequada para garantir uma boa experiência ao usuário.
+
+Além disso, foi a primeira vez que trabalhei com logs de atividades, algo que eu nunca tinha implementado antes, e que hoje entendo como essencial em sistemas de gestão.
+
+
+## 🧪 Ferramentas
+
+| Tecnologia | Descrição |
+|------------|-----------|
+| ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white) | Linguagem principal usada no desenvolvimento |
+| ![Swing](https://img.shields.io/badge/Swing-%23000000?style=for-the-badge&logo=java&logoColor=white) | Biblioteca gráfica para construção da interface |
+| ![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white) | Banco de dados relacional |
+| ![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white) | Gerenciador de dependências e build |
+| ![NetBeans](https://img.shields.io/badge/NetBeans-1B6AC6?style=for-the-badge&logo=apache-netbeans-ide&logoColor=white) | IDE utilizada durante o desenvolvimento |
+
+### 💻 Usando o Terminal
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/TaylorSzu/SGVE.git
+
+2. Entre na pasta:
+    ```bash
+    cd SGVE
+
+3. Compile o projeto com o Maven:
+    ```bash
+    mvn clean install
+
+4. Execute a aplicação:
+    ```bash
+    mvn exec:java
